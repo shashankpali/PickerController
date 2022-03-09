@@ -17,6 +17,7 @@ final public class PickerController: UIViewController {
     //
     private var viewModel : PickerViewModel!
     private var dataSource : [PickerModel]?
+    private var pickerTitle = ""
     private var multiSelect = true
     private var callback : (([String]) -> Void)?
     //
@@ -43,7 +44,7 @@ final public class PickerController: UIViewController {
         picker.dataSource = picker.viewModel.getDataSource()
         picker.multiSelect = multiSelect
         picker.callback = callback
-        picker.titleLabel.text = title
+        picker.pickerTitle = title
         
         picker.modalPresentationStyle = .overCurrentContext
         controller.present(picker, animated: true, completion: nil)
@@ -55,6 +56,7 @@ final public class PickerController: UIViewController {
         super.viewDidLoad()
         
         pickerTableView.register(PickerCell.self, forCellReuseIdentifier: cellIdentifer)
+        titleLabel.text = pickerTitle
         setupUI()
     }
     
