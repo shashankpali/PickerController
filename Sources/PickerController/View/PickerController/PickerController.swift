@@ -36,8 +36,7 @@ final public class PickerController: UIViewController {
     
     private static func setupPicker(forItems: [String], selectedItem: [String]?, title: String, multiSelect: Bool, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
         
-        let bundle = Bundle(path: Bundle(for: PickerController.self).path(forResource: "PickerController", ofType: "bundle")!)
-        let picker = PickerController(nibName: String(describing: PickerController.self), bundle: bundle)
+        let picker = PickerController(nibName: String(describing: PickerController.self), bundle: .module)
         
         picker.viewModel = PickerViewModel.init(forItems: forItems, selectedItems: multiSelect ? selectedItem : nil)
         picker.viewModel.delegate = picker
