@@ -43,6 +43,7 @@ final public class PickerController: UIViewController {
         picker.dataSource = picker.viewModel.getDataSource()
         picker.multiSelect = multiSelect
         picker.callback = callback
+        picker.titleLabel.text = title
         
         picker.modalPresentationStyle = .overCurrentContext
         controller.present(picker, animated: true, completion: nil)
