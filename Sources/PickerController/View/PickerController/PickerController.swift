@@ -25,11 +25,11 @@ final public class PickerController: UIViewController {
     
     // MARK: - Usage methods
     
-    public static func showPicker(forItems: [String], title: String, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
+    @objc public static func showPicker(forItems: [String], title: String, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
         PickerController.setupPicker(forItems: forItems, selectedItem: nil, title: title, multiSelect: false, on: controller, callback: callback)
     }
     
-    public static func showMultiPicker(forItems: [String], selectedItem: [String]?, title: String, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
+    @objc public static func showMultiPicker(forItems: [String], selectedItem: [String]?, title: String, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
         PickerController.setupPicker(forItems: forItems, selectedItem: selectedItem, title: title, multiSelect: true, on: controller, callback: callback)
     }
 
