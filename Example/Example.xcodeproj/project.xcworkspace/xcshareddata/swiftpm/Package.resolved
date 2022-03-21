@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PickerController",
+        "repositoryURL": "https://github.com/shashankpali/PickerController",
+        "state": {
+          "branch": "main",
+          "revision": "8c82756853eb0811c476c16d663438c5815ba338",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
