@@ -46,6 +46,8 @@ final public class PickerController: UIViewController {
         picker.callback = callback
         picker.pickerTitle = title
         
+        picker.view.addGestureRecognizer(UIGestureRecognizer(target: picker, action: #selector(picker.dissmissPicker(_:))))
+        
         picker.modalPresentationStyle = .overCurrentContext
         controller.present(picker, animated: true, completion: nil)
     }
@@ -55,7 +57,7 @@ final public class PickerController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(self.dissmissPicker(_:))))
+        
         //
         pickerTableView.register(PickerCell.self, forCellReuseIdentifier: cellIdentifer)
         titleLabel.text = pickerTitle
