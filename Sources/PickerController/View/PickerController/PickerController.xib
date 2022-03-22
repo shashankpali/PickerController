@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -122,23 +122,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="tMW-Mw-dVb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Qnk-sN-niP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tMW-Mw-dVb" secondAttribute="trailing" constant="10" id="i4k-Bi-B2z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tMW-Mw-dVb" secondAttribute="bottom" constant="10" id="qnt-mQ-ww2"/>
             </constraints>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="BwK-Ja-6Bp" appends="YES" id="nl0-hN-7PW"/>
-                <outletCollection property="gestureRecognizers" destination="BwK-Ja-6Bp" appends="YES" id="jcd-Sw-uAN"/>
-                <outletCollection property="gestureRecognizers" destination="BwK-Ja-6Bp" appends="YES" id="BX1-Zh-KaL"/>
-            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
         </view>
-        <tapGestureRecognizer id="BwK-Ja-6Bp">
-            <connections>
-                <action selector="dismissPicker:" destination="-1" id="Lvy-Oa-KQB"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>
