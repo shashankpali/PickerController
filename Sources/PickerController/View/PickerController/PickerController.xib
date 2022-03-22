@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +22,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEO-Mc-ozG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="dismissPicker:" destination="-1" eventType="touchUpInside" id="vCz-R4-jKY"/>
+                    </connections>
+                </button>
                 <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-Mw-dVb">
                     <rect key="frame" x="10" y="364" width="394" height="488"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5s9-KR-PVg">
@@ -123,7 +131,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="nEO-Mc-ozG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7k9-70-Awq"/>
+                <constraint firstAttribute="bottom" secondItem="nEO-Mc-ozG" secondAttribute="bottom" id="QDY-yt-IwK"/>
                 <constraint firstItem="tMW-Mw-dVb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Qnk-sN-niP"/>
+                <constraint firstItem="nEO-Mc-ozG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SBG-7S-bcS"/>
+                <constraint firstItem="nEO-Mc-ozG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YJo-64-5Bh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tMW-Mw-dVb" secondAttribute="trailing" constant="10" id="i4k-Bi-B2z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tMW-Mw-dVb" secondAttribute="bottom" constant="10" id="qnt-mQ-ww2"/>
             </constraints>
