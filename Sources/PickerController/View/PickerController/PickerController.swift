@@ -8,7 +8,7 @@
 import UIKit
 
 final public class PickerController: UIViewController {
-
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var pickerTableView: UITableView!
     //
@@ -32,7 +32,7 @@ final public class PickerController: UIViewController {
     @objc public static func showMultiPicker(forItems: [String], selectedItem: [String]?, title: String, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
         PickerController.setupPicker(forItems: forItems, selectedItem: selectedItem, title: title, multiSelect: true, on: controller, callback: callback)
     }
-
+    
     // MARK: - Common initializer
     
     private static func setupPicker(forItems: [String], selectedItem: [String]?, title: String, multiSelect: Bool, on controller: UIViewController, callback: @escaping ([String]) -> Void) {
@@ -54,9 +54,6 @@ final public class PickerController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //
         pickerTableView.register(PickerCell.self, forCellReuseIdentifier: cellIdentifer)
         titleLabel.text = pickerTitle
         setupUI()
@@ -66,7 +63,7 @@ final public class PickerController: UIViewController {
         searchHeightConstant.constant = dataSource?.count ?? 0 > 7 ? searchHeightConstant.constant : 0
         doneHeightConstant.constant = multiSelect ? doneHeightConstant.constant : 0
     }
-
+    
 }
 
 extension PickerController: UITableViewDataSource {
@@ -96,6 +93,13 @@ extension PickerController: UITableViewDelegate {
         }
     }
     
+    private func userSelectedItems() {
+        if let block = callback {
+            block(viewModel.getSelectedItem())
+        }
+        dismissPicker(UIButton())
+    }
+    
     @IBAction private func doneTapped(_ sender: UIButton) {
         userSelectedItems()
     }
@@ -103,13 +107,6 @@ extension PickerController: UITableViewDelegate {
     @IBAction private func dismissPicker(_ sender: UIButton) {
         callback = nil
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    private func userSelectedItems() {
-        if let block = callback {
-            block(viewModel.getSelectedItem())
-        }
-        dismissPicker(UIButton())
     }
     
 }
