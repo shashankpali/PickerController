@@ -98,11 +98,16 @@ extension PickerController: UITableViewDelegate {
         userSelectedItems()
     }
     
+    @IBAction func dismissPicker(_ sender: UITapGestureRecognizer) {
+        callback = nil
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     private func userSelectedItems() {
         if let block = callback {
             block(viewModel.getSelectedItem())
         }
-        self.dismiss(animated: true, completion: nil)
+        dismissPicker(UITapGestureRecognizer())
     }
     
 }
