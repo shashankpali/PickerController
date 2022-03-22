@@ -55,6 +55,8 @@ final public class PickerController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(dissmissPicker)))
+        //
         pickerTableView.register(PickerCell.self, forCellReuseIdentifier: cellIdentifer)
         titleLabel.text = pickerTitle
         setupUI()
@@ -102,6 +104,11 @@ extension PickerController: UITableViewDelegate {
         if let block = callback {
             block(viewModel.getSelectedItem())
         }
+        dissmissPicker()
+    }
+    
+    @objc private func dissmissPicker() {
+        callback = nil
         self.dismiss(animated: true, completion: nil)
     }
     
