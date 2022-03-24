@@ -117,6 +117,10 @@ extension PickerController: UISearchBarDelegate {
         viewModel.filter(using: searchText)
     }
     
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
 }
 
 // MARK: - Reload
