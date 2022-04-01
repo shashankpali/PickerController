@@ -11,9 +11,11 @@ final public class PickerController: UIViewController {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var pickerTableView: UITableView!
+    @IBOutlet weak var backgroundBtn: UIButton!
     //
     @IBOutlet private weak var searchHeightConstant: NSLayoutConstraint!
     @IBOutlet private weak var doneHeightConstant: NSLayoutConstraint!
+    @IBOutlet weak var pickerBottomConstant: NSLayoutConstraint!
     //
     private var viewModel : PickerViewModel!
     private var dataSource : [PickerModel]?
@@ -47,7 +49,7 @@ final public class PickerController: UIViewController {
         picker.pickerTitle = title
         
         picker.modalPresentationStyle = .overCurrentContext
-        controller.present(picker, animated: true, completion: nil)
+        controller.present(picker, animated: false, completion: nil)
     }
     
     // MARK: - Controller life cycle
@@ -59,9 +61,26 @@ final public class PickerController: UIViewController {
         setupUI()
     }
     
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        picker(show: true)
+    }
+    
     private func setupUI() {
         searchHeightConstant.constant = dataSource?.count ?? 0 > 7 ? searchHeightConstant.constant : 0
         doneHeightConstant.constant = multiSelect ? doneHeightConstant.constant : 0
+    }
+    
+    private func picker(show: Bool) {
+        pickerBottomConstant.constant = show ? 10.0 : -540.0
+        UIView.animate(withDuration: 0.3) {
+            self.backgroundBtn.backgroundColor = show ? UIColor.init(white: 0, alpha: 0.4) : UIColor.clear
+            self.view.layoutIfNeeded()
+        } completion: { success in
+            guard show == false else {return}
+            self.callback = nil
+            self.dismiss(animated: false, completion: nil)
+        }
     }
     
 }
@@ -105,8 +124,7 @@ extension PickerController: UITableViewDelegate {
     }
     
     @IBAction private func dismissPicker(_ sender: UIButton) {
-        callback = nil
-        self.dismiss(animated: true, completion: nil)
+        picker(show: false)
     }
     
 }
@@ -118,7 +136,21 @@ extension PickerController: UISearchBarDelegate {
     }
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        pickerBottomConstant.constant = 10.0
+        animate(withDuration: 0.2)
         searchBar.resignFirstResponder()
+    }
+    
+    public func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        pickerBottomConstant.constant = pickerTableView.bounds.height/2.5
+        animate(withDuration: 0.3)
+        return true
+    }
+    
+    private func animate(withDuration duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
     }
     
 }
