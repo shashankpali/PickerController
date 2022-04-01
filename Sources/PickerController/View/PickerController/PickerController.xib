@@ -33,7 +33,7 @@
                     </connections>
                 </button>
                 <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-Mw-dVb">
-                    <rect key="frame" x="10" y="364" width="394" height="488"/>
+                    <rect key="frame" x="10" y="914" width="394" height="488"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5s9-KR-PVg">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="488"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
                 <constraint firstItem="nEO-Mc-ozG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SBG-7S-bcS"/>
                 <constraint firstItem="nEO-Mc-ozG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YJo-64-5Bh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tMW-Mw-dVb" secondAttribute="trailing" constant="10" id="i4k-Bi-B2z"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tMW-Mw-dVb" secondAttribute="bottom" constant="10" id="qnt-mQ-ww2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tMW-Mw-dVb" secondAttribute="bottom" constant="-540" id="qnt-mQ-ww2"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
         </view>

@@ -69,6 +69,7 @@ final public class PickerController: UIViewController {
     private func setupUI() {
         searchHeightConstant.constant = dataSource?.count ?? 0 > 7 ? searchHeightConstant.constant : 0
         doneHeightConstant.constant = multiSelect ? doneHeightConstant.constant : 0
+        backgroundBtn.setTitle("", for: .normal)
     }
     
     private func picker(show: Bool) {
